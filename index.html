@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adham — Full-stack, data and infrastructure engineer</title>
+<!-- TODO: your own one-line description; this is what shows in search results -->
+<meta name="description" content="I build software across the whole stack: interfaces, services, data pipelines, and the infrastructure underneath.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231E1E22'/><circle cx='16' cy='16' r='5' fill='%236366F1'/></svg>">
+<script>document.documentElement.className = "js";</script>
+</head>
+<body>
+
+<a class="skip" href="#work">Skip to the work</a>
+
+<div class="page">
+
+  <!-- ============ hero ============ -->
+  <section class="bento" aria-label="Introduction">
+
+    <div class="tile span4 tile-name reveal">
+      <!-- TODO: your name -->
+      <h1>Adham</h1>
+      <!-- TODO: rewrite in your own words. Two lines, no more. -->
+      <p class="tagline">I build software across the whole stack — interfaces, the services
+        behind them, the data and models they run on, and the infrastructure that keeps it up.</p>
+      <div class="links">
+        <a class="btn primary" href="cv.pdf">Download CV</a>
+        <a class="btn" href="mailto:adham@mcpy.cc">Email me</a>
+        <!-- TODO: real profile URLs -->
+        <a class="btn" href="https://github.com/">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="tile span2 accent tile-status reveal">
+      <p class="label"><span class="dot"></span>Available</p>
+      <div>
+        <p class="value">Open to full-time roles</p>
+        <p class="caption">Remote, or on-site in Cairo <!-- TODO: your arrangement --></p>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">Where</p>
+      <div>
+        <p class="value">Cairo, EG</p>
+        <p class="caption">GMT+2 <!-- TODO: your city and timezone --></p>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">Building</p>
+      <div>
+        <!-- TODO: whatever you are working on right now. One line. -->
+        <p class="value small">A pipeline that turns a mess of CSVs into something queryable</p>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">Shipped</p>
+      <div>
+        <!-- TODO: a real number you can defend -->
+        <p class="value big">12</p>
+        <p class="caption">Projects that made it to production</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ about ============ -->
+  <section class="bento" aria-label="About">
+
+    <div class="tile span4 reveal">
+      <p class="label">About</p>
+      <!-- TODO: your own claim. Short, specific, and true. -->
+      <h2 class="tile-headline">I like the parts of the job other people skip.</h2>
+      <p class="prose">Most of what I have built started as somebody else's abandoned script.
+        I care about the boring middle — the retries, the schema that stops the bad row getting
+        in, the deploy that does not need a person watching it. Looking for a team where I can
+        own a system from design through to the pager.</p>
+    </div>
+
+    <div class="tile span2 accent tile-quote reveal">
+      <p class="mark" aria-hidden="true">&ldquo;</p>
+      <!-- TODO: a line you actually believe, or delete this tile -->
+      <blockquote>Make it work, make it observable, then make it fast. In that order.</blockquote>
+      <p class="caption">— what I keep relearning</p>
+    </div>
+
+  </section>
+
+  <!-- ============ stack ============ -->
+  <section aria-labelledby="stack-heading">
+    <p class="eyebrow">Stack</p>
+    <h2 class="section-headline" id="stack-heading">What I work with, layer by layer</h2>
+    <p class="instruction">Choose a layer to filter the work below.</p>
+
+    <div class="bento stack">
+
+      <button class="tile span3 tile-layer reveal" data-layer="interface" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Interface</p>
+        <div>
+          <p class="value">TypeScript&nbsp;· React&nbsp;· Next.js</p>
+          <p class="caption"><span class="count"></span></p>
+        </div>
+      </button>
+
+      <button class="tile span3 tile-layer reveal" data-layer="services" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Services</p>
+        <div>
+          <p class="value">Python&nbsp;· FastAPI&nbsp;· Postgres&nbsp;· Redis</p>
+          <p class="caption"><span class="count"></span></p>
+        </div>
+      </button>
+
+      <button class="tile span3 tile-layer reveal" data-layer="data" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Data and AI</p>
+        <div>
+          <p class="value">PyTorch&nbsp;· pandas&nbsp;· Airflow&nbsp;· RAG</p>
+          <p class="caption"><span class="count"></span></p>
+        </div>
+      </button>
+
+      <button class="tile span3 tile-layer reveal" data-layer="infra" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Infrastructure</p>
+        <div>
+          <p class="value">Docker&nbsp;· Kubernetes&nbsp;· Terraform&nbsp;· AWS</p>
+          <p class="caption"><span class="count"></span></p>
+        </div>
+      </button>
+
+    </div>
+    <!-- TODO: delete anything here you would not want to be interviewed on -->
+  </section>
+
+  <!-- ============ work ============ -->
+  <section id="work" aria-labelledby="work-heading">
+    <p class="eyebrow">Selected projects</p>
+    <h2 class="section-headline" id="work-heading">Things I built that other people use</h2>
+    <p class="instruction"><span id="status">Four projects.</span>
+      <button class="clear" id="clear" hidden>Show every project</button></p>
+
+    <div class="bento work">
+
+      <!-- TODO: copy a whole <article> to add a project. data-layers drives the filter,
+           the layer dots, and the per-layer counts — all computed at load. -->
+      <article class="tile span3 tile-project reveal" data-layers="services data infra">
+        <div class="tile-top">
+          <span class="badge">Side project</span>
+          <span class="metric">4.2k requests/day <!-- TODO --></span>
+        </div>
+        <div>
+          <h3>Project name</h3>
+          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.
+            Put a number in this sentence.</p>
+          <p class="dots"></p>
+          <p class="tile-links"><a href="#">Source</a> <a href="#">Live</a></p>
+        </div>
+      </article>
+
+      <article class="tile span3 tile-project reveal" data-layers="data">
+        <div class="tile-top">
+          <span class="badge">Research</span>
+          <span class="metric">TODO</span>
+        </div>
+        <div>
+          <h3>Project name</h3>
+          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.</p>
+          <p class="dots"></p>
+          <p class="tile-links"><a href="#">Source</a> <a href="#">Write-up</a></p>
+        </div>
+      </article>
+
+      <article class="tile span2 tile-project reveal" data-layers="interface services">
+        <div class="tile-top">
+          <span class="badge">Product</span>
+        </div>
+        <div>
+          <h3>Project name</h3>
+          <p class="prose">What it does and who uses it.</p>
+          <p class="dots"></p>
+          <p class="tile-links"><a href="#">Source</a> <a href="#">Live</a></p>
+        </div>
+      </article>
+
+      <article class="tile span4 tile-project reveal" data-layers="infra">
+        <div class="tile-top">
+          <span class="badge">Tooling</span>
+          <span class="metric">Runs for $6/month <!-- TODO --></span>
+        </div>
+        <div>
+          <h3>Project name</h3>
+          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.</p>
+          <p class="dots"></p>
+          <p class="tile-links"><a href="#">Source</a></p>
+        </div>
+      </article>
+
+    </div>
+    <p class="empty" id="empty" hidden>Nothing at this layer yet.</p>
+  </section>
+
+  <!-- ============ experience ============ -->
+  <section aria-labelledby="history-heading">
+    <p class="eyebrow">Worked on</p>
+    <h2 class="section-headline" id="history-heading">Where I have been</h2>
+
+    <div class="bento history">
+
+      <!-- TODO: copy a whole <div class="tile"> to add a role. Newest first. -->
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">C</span>
+          <div>
+            <p class="role-org">Company</p>
+            <p class="label">2024 — present</p>
+          </div>
+        </div>
+        <p class="role-title">Job title</p>
+        <p class="prose">What you owned, and one concrete thing that got better because you
+          were there. A number belongs here too.</p>
+      </div>
+
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">C</span>
+          <div>
+            <p class="role-org">Company</p>
+            <p class="label">2022 — 2024</p>
+          </div>
+        </div>
+        <p class="role-title">Job title</p>
+        <p class="prose">What you owned, and one concrete thing that got better because you were there.</p>
+      </div>
+
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">U</span>
+          <div>
+            <p class="role-org">University</p>
+            <p class="label">2018 — 2022</p>
+          </div>
+        </div>
+        <p class="role-title">BSc Computer Science</p>
+        <p class="prose">Thesis topic or coursework, if it earns the line. Otherwise delete it.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ contact ============ -->
+  <section class="bento" aria-label="Contact">
+
+    <div class="tile span4 accent tile-contact reveal">
+      <p class="label">Get in touch</p>
+      <h2 class="tile-headline">I read every email. Even the long ones.</h2>
+      <div class="links">
+        <a class="btn primary" href="mailto:adham@mcpy.cc">Email me</a>
+        <span class="caption">adham@mcpy.cc</span>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-find reveal">
+      <p class="label">Find me</p>
+      <ul class="find">
+        <!-- TODO: real handles and URLs -->
+        <li><a href="https://github.com/">GitHub</a><span>@adham</span></li>
+        <li><a href="https://linkedin.com/in/">LinkedIn</a><span>in/adham</span></li>
+        <li><a href="cv.pdf">CV</a><span>PDF</span></li>
+      </ul>
+      <p class="caption">Cairo, Egypt · happy to relocate</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>Adham, 2026. Hand-built, no framework.</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var layers = Array.prototype.slice.call(document.querySelectorAll('.tile-layer'));
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.tile-project'));
+  var status = document.getElementById('status');
+  var clear = document.getElementById('clear');
+  var empty = document.getElementById('empty');
+  var active = null;
+
+  function matches(project, layer) {
+    return project.dataset.layers.split(' ').indexOf(layer) !== -1;
+  }
+
+  // Counts come from the projects themselves, so they stay right when you add one.
+  layers.forEach(function (layer) {
+    var n = projects.filter(function (p) { return matches(p, layer.dataset.layer); }).length;
+    layer.querySelector('.count').textContent = n + (n === 1 ? ' project' : ' projects');
+  });
+
+  var palette = {};
+  layers.forEach(function (l) {
+    palette[l.dataset.layer] = getComputedStyle(l).getPropertyValue('--layer').trim();
+  });
+
+  // Each project shows a dot per layer it touches, dimmed for the ones it does not.
+  var order = layers.map(function (l) { return l.dataset.layer; });
+  var names = {};
+  layers.forEach(function (l) { names[l.dataset.layer] = l.querySelector('.label').textContent.trim(); });
+
+  projects.forEach(function (p) {
+    var touches = p.dataset.layers.split(' ');
+    p.querySelector('.dots').innerHTML = order.map(function (key) {
+      var on = touches.indexOf(key) !== -1;
+      return '<i style="background:' + palette[key] + '" class="' + (on ? '' : 'off') +
+             '" title="' + names[key] + '"></i>';
+    }).join('');
+  });
+
+  function apply() {
+    var shown = 0;
+    projects.forEach(function (p) {
+      var visible = !active || matches(p, active);
+      p.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    layers.forEach(function (l) {
+      l.setAttribute('aria-pressed', String(l.dataset.layer === active));
+    });
+    status.textContent = active
+      ? shown + (shown === 1 ? ' project touches ' : ' projects touch ') + names[active] + '.'
+      : projects.length + ' projects.';
+    clear.hidden = !active;
+    empty.hidden = shown > 0;
+  }
+
+  layers.forEach(function (layer) {
+    layer.addEventListener('click', function () {
+      active = active === layer.dataset.layer ? null : layer.dataset.layer;
+      apply();
+    });
+  });
+
+  clear.addEventListener('click', function () { active = null; apply(); });
+  apply();
+
+  // Tiles rise into place once, in the order they sit on the page.
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if (reduced || !('IntersectionObserver' in window)) {
+    tiles.forEach(function (t) { t.classList.add('in'); });
+    return;
+  }
+  var seen = new WeakMap();
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var tile = entry.target;
+      var group = Array.prototype.slice.call(tile.parentNode.children).indexOf(tile);
+      if (!seen.get(tile)) {
+        tile.style.transitionDelay = Math.min(group, 5) * 0.08 + 's';
+        tile.classList.add('in');
+        seen.set(tile, true);
+      }
+      io.unobserve(tile);
+    });
+  }, { rootMargin: '0px 0px -100px 0px' });
+  tiles.forEach(function (t) { io.observe(t); });
+}());
+</script>
+
+</body>
+</html>
