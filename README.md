@@ -4,7 +4,8 @@ Static site. Two files, no build step, no dependencies, no webfonts.
 
     index.html   all content, plus ~70 lines of vanilla JS at the bottom
     style.css    tokens, tile system, bento grid (light and dark follow the OS)
-    cv.pdf       drop your CV here — the Download CV button links to it
+    cv.html      the English CV; edit this, then regenerate cv.pdf (see below)
+    cv.pdf       generated from cv.html — what the Download CV button serves
 
 ## The idea
 
@@ -13,7 +14,7 @@ A bento grid: rounded tiles of varied widths on warm cream, styled after
 `#6366F1` indigo, uppercase micro-labels, 0.6s scroll reveal) are taken from that
 reference's own design system.
 
-The four layers you work across — Interface, Services, Data and AI,
+The four layers you work across — Interface, Perception, Services and data,
 Infrastructure — are tiles you can click. Clicking one filters the project tiles
 to the work that touches that layer. Each project tile shows four dots, lit for
 the layers it spans, using the same colours as the layer tiles.
@@ -23,7 +24,7 @@ the layers it spans, using the same colours as the layer tiles.
 Search `index.html` for `TODO` — every spot that needs your words is marked.
 
 - **Add a project:** copy a whole `<article class="tile ... tile-project">`. Set
-  `data-layers` to the layers it touches (`interface services data infra`). That
+  `data-layers` to the layers it touches (`interface perception services infra`). That
   one attribute drives the filter, the dots, and the per-layer counts, all
   computed at load, so nothing goes stale.
 - **Change a tile's width:** swap its `span2` / `span3` / `span4` class. The grid
@@ -32,6 +33,13 @@ Search `index.html` for `TODO` — every spot that needs your words is marked.
 
 Colours are the custom properties at the top of `style.css`, with a dark set in
 the `prefers-color-scheme` block below them.
+
+## Regenerating the CV PDF
+
+Edit `cv.html`, then:
+
+    google-chrome --headless --no-pdf-header-footer \
+      --print-to-pdf=cv.pdf file://$PWD/cv.html
 
 ## Preview locally
 

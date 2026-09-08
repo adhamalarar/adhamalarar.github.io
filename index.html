@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Adham — Full-stack, data and infrastructure engineer</title>
-<!-- TODO: your own one-line description; this is what shows in search results -->
-<meta name="description" content="I build software across the whole stack: interfaces, services, data pipelines, and the infrastructure underneath.">
+<title>Adham Al-Arar — Applied computer science, Berlin</title>
+<meta name="description" content="Applied computer science student at HTW Berlin. System integration, web systems, and computer-vision interfaces.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231E1E22'/><circle cx='16' cy='16' r='5' fill='%236366F1'/></svg>">
 <script>document.documentElement.className = "js";</script>
@@ -20,50 +19,48 @@
   <section class="bento" aria-label="Introduction">
 
     <div class="tile span4 tile-name reveal">
-      <!-- TODO: your name -->
-      <h1>Adham</h1>
-      <!-- TODO: rewrite in your own words. Two lines, no more. -->
-      <p class="tagline">I build software across the whole stack — interfaces, the services
-        behind them, the data and models they run on, and the infrastructure that keeps it up.</p>
+      <h1>Adham Al-Arar</h1>
+      <p class="tagline">I build web systems end to end — camera-driven interfaces, the services
+        behind them, and the Docker and CI that get them running.</p>
       <div class="links">
         <a class="btn primary" href="cv.pdf">Download CV</a>
-        <a class="btn" href="mailto:adham@mcpy.cc">Email me</a>
-        <!-- TODO: real profile URLs -->
-        <a class="btn" href="https://github.com/">GitHub</a>
+        <a class="btn" href="mailto:adham@alarar.de">Email me</a>
+        <a class="btn" href="https://github.com/adhamalarar">GitHub</a>
+        <!-- TODO: your LinkedIn URL, or delete this button -->
         <a class="btn" href="https://linkedin.com/in/">LinkedIn</a>
       </div>
     </div>
 
     <div class="tile span2 accent tile-status reveal">
-      <p class="label"><span class="dot"></span>Available</p>
+      <p class="label"><span class="dot"></span>Looking for</p>
       <div>
-        <p class="value">Open to full-time roles</p>
-        <p class="caption">Remote, or on-site in Cairo <!-- TODO: your arrangement --></p>
+        <!-- TODO: I inferred this from your CV — correct it if you want something else -->
+        <p class="value">Working-student roles and internships</p>
+        <p class="caption">Berlin, or remote</p>
       </div>
     </div>
 
     <div class="tile span2 tile-stat reveal">
       <p class="label">Where</p>
       <div>
-        <p class="value">Cairo, EG</p>
-        <p class="caption">GMT+2 <!-- TODO: your city and timezone --></p>
+        <p class="value">Berlin, DE</p>
+        <p class="caption">GMT+1</p>
       </div>
     </div>
 
     <div class="tile span2 tile-stat reveal">
-      <p class="label">Building</p>
+      <p class="label">Studying</p>
       <div>
-        <!-- TODO: whatever you are working on right now. One line. -->
-        <p class="value small">A pipeline that turns a mess of CSVs into something queryable</p>
+        <p class="value small">B.Sc. Applied Computer Science</p>
+        <p class="caption">HTW Berlin, since 2021</p>
       </div>
     </div>
 
     <div class="tile span2 tile-stat reveal">
-      <p class="label">Shipped</p>
+      <p class="label">Languages</p>
       <div>
-        <!-- TODO: a real number you can defend -->
-        <p class="value big">12</p>
-        <p class="caption">Projects that made it to production</p>
+        <p class="value small">Arabic&nbsp;· German&nbsp;· English</p>
+        <p class="caption">Native · business fluent · good</p>
       </div>
     </div>
 
@@ -74,19 +71,20 @@
 
     <div class="tile span4 reveal">
       <p class="label">About</p>
-      <!-- TODO: your own claim. Short, specific, and true. -->
-      <h2 class="tile-headline">I like the parts of the job other people skip.</h2>
-      <p class="prose">Most of what I have built started as somebody else's abandoned script.
-        I care about the boring middle — the retries, the schema that stops the bad row getting
-        in, the deploy that does not need a person watching it. Looking for a team where I can
-        own a system from design through to the pager.</p>
+      <h2 class="tile-headline">I like making computers notice people.</h2>
+      <p class="prose">I study applied computer science at HTW Berlin, and most of what I have
+        built sits somewhere between a camera and a database. My last project read body
+        positions and gestures from a webcam; my internship before that was the other end of
+        the same problem — containers, reverse proxies and CI, so that something built in a
+        seminar can actually survive being deployed. I am drawn to digital assistance systems
+        and to the point where a person and a machine have to understand each other.</p>
     </div>
 
-    <div class="tile span2 accent tile-quote reveal">
-      <p class="mark" aria-hidden="true">&ldquo;</p>
-      <!-- TODO: a line you actually believe, or delete this tile -->
-      <blockquote>Make it work, make it observable, then make it fast. In that order.</blockquote>
-      <p class="caption">— what I keep relearning</p>
+    <div class="tile span2 accent tile-stat reveal">
+      <p class="label">Focus</p>
+      <div>
+        <p class="value">Digital assistance systems, system integration, computer vision</p>
+      </div>
     </div>
 
   </section>
@@ -94,107 +92,101 @@
   <!-- ============ stack ============ -->
   <section aria-labelledby="stack-heading">
     <p class="eyebrow">Stack</p>
-    <h2 class="section-headline" id="stack-heading">What I work with, layer by layer</h2>
-    <p class="instruction">Choose a layer to filter the work below.</p>
+    <h2 class="section-headline" id="stack-heading">From camera input to the interface</h2>
+    <p class="instruction">The layers I work across. Choose one to filter the work below.</p>
 
     <div class="bento stack">
 
-      <button class="tile span3 tile-layer reveal" data-layer="interface" aria-pressed="false">
+      <button class="tile tile-layer reveal" data-layer="interface" aria-pressed="false">
         <p class="label"><span class="dot"></span>Interface</p>
         <div>
-          <p class="value">TypeScript&nbsp;· React&nbsp;· Next.js</p>
+          <p class="value">JavaScript&nbsp;· HTML/CSS&nbsp;· Webcam APIs</p>
           <p class="caption"><span class="count"></span></p>
         </div>
       </button>
 
-      <button class="tile span3 tile-layer reveal" data-layer="services" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Services</p>
+      <button class="tile tile-layer reveal" data-layer="perception" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Perception</p>
         <div>
-          <p class="value">Python&nbsp;· FastAPI&nbsp;· Postgres&nbsp;· Redis</p>
+          <p class="value">MediaPipe Pose, Face and Hands&nbsp;· landmark interaction</p>
           <p class="caption"><span class="count"></span></p>
         </div>
       </button>
 
-      <button class="tile span3 tile-layer reveal" data-layer="data" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Data and AI</p>
+      <button class="tile tile-layer reveal" data-layer="services" aria-pressed="false">
+        <p class="label"><span class="dot"></span>Services and data</p>
         <div>
-          <p class="value">PyTorch&nbsp;· pandas&nbsp;· Airflow&nbsp;· RAG</p>
+          <p class="value">Node.js&nbsp;· Django&nbsp;· Java&nbsp;· PostgreSQL&nbsp;· MongoDB&nbsp;· Redis</p>
           <p class="caption"><span class="count"></span></p>
         </div>
       </button>
 
-      <button class="tile span3 tile-layer reveal" data-layer="infra" aria-pressed="false">
+      <button class="tile tile-layer reveal" data-layer="infra" aria-pressed="false">
         <p class="label"><span class="dot"></span>Infrastructure</p>
         <div>
-          <p class="value">Docker&nbsp;· Kubernetes&nbsp;· Terraform&nbsp;· AWS</p>
+          <p class="value">Docker&nbsp;· Nginx&nbsp;· Cloudron&nbsp;· GitLab CI/CD&nbsp;· Linux</p>
           <p class="caption"><span class="count"></span></p>
         </div>
       </button>
 
     </div>
-    <!-- TODO: delete anything here you would not want to be interviewed on -->
   </section>
 
   <!-- ============ work ============ -->
   <section id="work" aria-labelledby="work-heading">
-    <p class="eyebrow">Selected projects</p>
-    <h2 class="section-headline" id="work-heading">Things I built that other people use</h2>
-    <p class="instruction"><span id="status">Four projects.</span>
+    <p class="eyebrow">Projects</p>
+    <h2 class="section-headline" id="work-heading">What I have built so far</h2>
+    <p class="instruction"><span id="status">Three projects.</span>
       <button class="clear" id="clear" hidden>Show every project</button></p>
 
     <div class="bento work">
 
-      <!-- TODO: copy a whole <article> to add a project. data-layers drives the filter,
-           the layer dots, and the per-layer counts — all computed at load. -->
-      <article class="tile span3 tile-project reveal" data-layers="services data infra">
+      <article class="tile span6 tile-project reveal" data-layers="interface perception">
         <div class="tile-top">
-          <span class="badge">Side project</span>
-          <span class="metric">4.2k requests/day <!-- TODO --></span>
+          <span class="badge">Team project</span>
+          <span class="metric">HTW Berlin, 2026</span>
         </div>
         <div>
-          <h3>Project name</h3>
-          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.
-            Put a number in this sentence.</p>
+          <h3>Body Explorer</h3>
+          <p class="prose">A digital learning and assistance system: a web prototype that
+            recognises body parts and gestures through an ordinary webcam. I worked on the
+            layered architecture that carries camera input through perception and
+            interpretation up to the interface — the interesting part was deciding what
+            counts as a gesture and what is just a person moving. Organised in the team with
+            GitHub and Kanban, where I also worked on integration and project management.</p>
+          <p class="built">JavaScript, HTML/CSS, MediaPipe Pose, Face and Hands, Webcam APIs.</p>
           <p class="dots"></p>
-          <p class="tile-links"><a href="#">Source</a> <a href="#">Live</a></p>
+          <!-- TODO: add the repository link if it is public -->
         </div>
       </article>
 
-      <article class="tile span3 tile-project reveal" data-layers="data">
+      <article class="tile span3 tile-project reveal" data-layers="interface services">
         <div class="tile-top">
-          <span class="badge">Research</span>
-          <span class="metric">TODO</span>
+          <span class="badge">University</span>
+          <span class="metric">2023</span>
         </div>
         <div>
-          <h3>Project name</h3>
-          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.</p>
+          <h3>Sustainability Map Berlin</h3>
+          <p class="prose">A website with an interactive map of sustainable places across
+            Berlin, with role-based permissions so different users can add and manage
+            locations rather than everyone editing everything.</p>
+          <p class="built">HTML, CSS, JavaScript, Node.js, MongoDB.</p>
           <p class="dots"></p>
-          <p class="tile-links"><a href="#">Source</a> <a href="#">Write-up</a></p>
         </div>
       </article>
 
-      <article class="tile span2 tile-project reveal" data-layers="interface services">
+      <article class="tile span3 tile-project reveal" data-layers="services">
         <div class="tile-top">
-          <span class="badge">Product</span>
+          <span class="badge">University</span>
+          <span class="metric">2022</span>
         </div>
         <div>
-          <h3>Project name</h3>
-          <p class="prose">What it does and who uses it.</p>
+          <h3>Book Collection CLI</h3>
+          <p class="prose">A Java command-line tool for managing book collections, built on a
+            linked list with custom sorting — the project where data structures stopped being
+            an exam topic and became something I had to make behave.</p>
+          <p class="built">Java, Comparator interface, data structures and algorithms.</p>
           <p class="dots"></p>
-          <p class="tile-links"><a href="#">Source</a> <a href="#">Live</a></p>
-        </div>
-      </article>
-
-      <article class="tile span4 tile-project reveal" data-layers="infra">
-        <div class="tile-top">
-          <span class="badge">Tooling</span>
-          <span class="metric">Runs for $6/month <!-- TODO --></span>
-        </div>
-        <div>
-          <h3>Project name</h3>
-          <p class="prose">What it does, who uses it, and the one part that was genuinely hard.</p>
-          <p class="dots"></p>
-          <p class="tile-links"><a href="#">Source</a></p>
         </div>
       </article>
 
@@ -204,50 +196,119 @@
 
   <!-- ============ experience ============ -->
   <section aria-labelledby="history-heading">
-    <p class="eyebrow">Worked on</p>
-    <h2 class="section-headline" id="history-heading">Where I have been</h2>
+    <p class="eyebrow">Experience</p>
+    <h2 class="section-headline" id="history-heading">Where I have worked</h2>
 
     <div class="bento history">
 
-      <!-- TODO: copy a whole <div class="tile"> to add a role. Newest first. -->
       <div class="tile span6 tile-role reveal">
         <div class="role-who">
-          <span class="avatar" aria-hidden="true">C</span>
+          <span class="avatar" aria-hidden="true">t</span>
           <div>
-            <p class="role-org">Company</p>
-            <p class="label">2024 — present</p>
+            <p class="role-org">think3ddd, Berlin</p>
+            <p class="label">Feb — May 2026</p>
           </div>
         </div>
-        <p class="role-title">Job title</p>
-        <p class="prose">What you owned, and one concrete thing that got better because you
-          were there. A number belongs here too.</p>
+        <p class="role-title">Intern, system integration</p>
+        <p class="prose">Built and tested a secured Supabase Studio environment on Cloudron,
+          running in Docker behind an Nginx reverse proxy. Worked with PostgreSQL, Redis,
+          Django, Linux and GitLab CI/CD on internal web and backend systems, analysed logs
+          and performance problems, and wrote the deployment configuration and the technical
+          documentation that went with it.</p>
       </div>
 
       <div class="tile span6 tile-role reveal">
         <div class="role-who">
-          <span class="avatar" aria-hidden="true">C</span>
+          <span class="avatar" aria-hidden="true">P</span>
           <div>
-            <p class="role-org">Company</p>
-            <p class="label">2022 — 2024</p>
+            <p class="role-org">Persos Personal Services UG, Berlin</p>
+            <p class="label">Since Jan 2020</p>
           </div>
         </div>
-        <p class="role-title">Job title</p>
-        <p class="prose">What you owned, and one concrete thing that got better because you were there.</p>
-      </div>
-
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">U</span>
-          <div>
-            <p class="role-org">University</p>
-            <p class="label">2018 — 2022</p>
-          </div>
-        </div>
-        <p class="role-title">BSc Computer Science</p>
-        <p class="prose">Thesis topic or coursework, if it earns the line. Otherwise delete it.</p>
+        <p class="role-title">Assistant</p>
+        <p class="prose">Alongside my studies.</p>
       </div>
 
     </div>
+  </section>
+
+  <!-- ============ education ============ -->
+  <section aria-labelledby="education-heading">
+    <p class="eyebrow">Education</p>
+    <h2 class="section-headline" id="education-heading">How I got here</h2>
+
+    <div class="bento history">
+
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">H</span>
+          <div>
+            <p class="role-org">HTW Berlin</p>
+            <p class="label">Since Apr 2021</p>
+          </div>
+        </div>
+        <p class="role-title">B.Sc. Applied Computer Science</p>
+        <p class="prose">Focus on digital assistance systems, system integration and computer vision.</p>
+      </div>
+
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">M</span>
+          <div>
+            <p class="role-org">Ming Cheng Institute, Merseburg</p>
+            <p class="label">Aug 2020 — Jan 2021</p>
+          </div>
+        </div>
+        <p class="role-title">Studienkolleg, T-Kurs</p>
+        <p class="prose">The technical preparatory year that qualifies international students for German universities.</p>
+      </div>
+
+      <div class="tile span6 tile-role reveal">
+        <div class="role-who">
+          <span class="avatar" aria-hidden="true">N</span>
+          <div>
+            <p class="role-org">The National University, Sana'a</p>
+            <p class="label">Nov 2017 — Jul 2018</p>
+          </div>
+        </div>
+        <p class="role-title">Computer Science</p>
+        <p class="prose">Where I started, before moving to Germany.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ volunteering ============ -->
+  <section class="bento" aria-labelledby="volunteering-heading">
+    <div class="span6">
+      <p class="eyebrow">Volunteering</p>
+      <h2 class="section-headline" id="volunteering-heading">Before all of this</h2>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">2017</p>
+      <div>
+        <p class="value small">Yemen Red Crescent Society</p>
+        <p class="caption">Rayma branch, Sana'a. Care for people injured in the war.</p>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">2016</p>
+      <div>
+        <p class="value small">Shahrazad Association</p>
+        <p class="caption">Sana'a. Food and clothing for people in need.</p>
+      </div>
+    </div>
+
+    <div class="tile span2 tile-stat reveal">
+      <p class="label">2016</p>
+      <div>
+        <p class="value small">Humanity Organization</p>
+        <p class="caption">Sana'a. Community support work.</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ============ contact ============ -->
@@ -257,26 +318,26 @@
       <p class="label">Get in touch</p>
       <h2 class="tile-headline">I read every email. Even the long ones.</h2>
       <div class="links">
-        <a class="btn primary" href="mailto:adham@mcpy.cc">Email me</a>
-        <span class="caption">adham@mcpy.cc</span>
+        <a class="btn primary" href="mailto:adham@alarar.de">Email me</a>
+        <span class="caption">adham@alarar.de</span>
       </div>
     </div>
 
     <div class="tile span2 tile-find reveal">
       <p class="label">Find me</p>
       <ul class="find">
-        <!-- TODO: real handles and URLs -->
-        <li><a href="https://github.com/">GitHub</a><span>@adham</span></li>
-        <li><a href="https://linkedin.com/in/">LinkedIn</a><span>in/adham</span></li>
+        <li><a href="https://github.com/adhamalarar">GitHub</a><span>@adhamalarar</span></li>
+        <!-- TODO: your LinkedIn URL and handle -->
+        <li><a href="https://linkedin.com/in/">LinkedIn</a><span>—</span></li>
         <li><a href="cv.pdf">CV</a><span>PDF</span></li>
       </ul>
-      <p class="caption">Cairo, Egypt · happy to relocate</p>
+      <p class="caption">Berlin, Germany</p>
     </div>
 
   </section>
 
   <footer>
-    <p>Adham, 2026. Hand-built, no framework.</p>
+    <p>Adham Al-Arar, 2026. Hand-built, no framework.</p>
   </footer>
 
 </div>
@@ -297,7 +358,13 @@
   // Counts come from the projects themselves, so they stay right when you add one.
   layers.forEach(function (layer) {
     var n = projects.filter(function (p) { return matches(p, layer.dataset.layer); }).length;
-    layer.querySelector('.count').textContent = n + (n === 1 ? ' project' : ' projects');
+    if (n === 0) {
+      // Skills I use at work rather than in a university project — filtering would empty the list.
+      layer.querySelector('.count').textContent = 'From my internship';
+      layer.disabled = true;
+    } else {
+      layer.querySelector('.count').textContent = n + (n === 1 ? ' project' : ' projects');
+    }
   });
 
   var palette = {};
