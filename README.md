@@ -3,7 +3,7 @@
 Static site. Two files, no build step, no dependencies, no webfonts.
 
     index.html   all content, plus ~70 lines of vanilla JS at the bottom
-    style.css    tokens, tile system, bento grid (light and dark follow the OS)
+    style.css    tokens, tile system, bento grid, light and dark palettes
     cv.html      the English CV; edit this, then regenerate cv.pdf (see below)
     cv.pdf       generated from cv.html — what the Download CV button serves
 
@@ -31,8 +31,31 @@ Search `index.html` for `TODO` — every spot that needs your words is marked.
   is six columns and collapses to two, then one, on narrow screens.
 - **Add a role:** copy a `.tile-role` block. Newest first.
 
-Colours are the custom properties at the top of `style.css`, with a dark set in
-the `prefers-color-scheme` block below them.
+Colours are the custom properties at the top of `style.css`, with a dark set
+below them.
+
+## Light and dark
+
+The pill in the top right cycles **System → Light → Dark**. System follows the
+OS and keeps following it if the OS flips mid-visit; an explicit pick is stored
+in `localStorage` under `theme` and nothing is stored while the pick is System.
+
+Two attributes on `<html>` carry it: `data-theme-choice` is what the visitor
+picked, and `data-theme` is what that resolves to right now (`light` or `dark`).
+A small script in `<head>` sets both before the first paint, so a visitor who
+picked dark never sees a flash of cream.
+
+To restyle a theme, edit the palettes at the top of `style.css`. The dark one is
+written twice on purpose — once under `prefers-color-scheme: dark` (which is
+also what visitors without JavaScript get, since the toggle is hidden for them)
+and once under `[data-theme="dark"]` for an explicit pick. **Keep the two in
+sync.** Everything else in the stylesheet reads tokens only, so a tile, dot or
+button added later themes itself; avoid inline colours in the JS for the same
+reason.
+
+`cv.html` has no toggle — it is a print document with no JavaScript, so it just
+follows the OS, and its dark palette is scoped to `@media screen`. The generated
+`cv.pdf` is unaffected.
 
 ## Regenerating the CV PDF
 

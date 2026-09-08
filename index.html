@@ -7,13 +7,42 @@
 <meta name="description" content="Applied computer science student at HTW Berlin. System integration, web systems, and computer-vision interfaces.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231E1E22'/><circle cx='16' cy='16' r='5' fill='%236366F1'/></svg>">
-<script>document.documentElement.className = "js";</script>
+<script>
+// Runs before the first paint, so the right theme is already on <html>
+// and a visitor who picked dark never sees a flash of cream.
+(function () {
+  var root = document.documentElement;
+  root.className = "js";
+  var choice = null;
+  try { choice = localStorage.getItem("theme"); } catch (e) {}
+  if (choice !== "light" && choice !== "dark") choice = "system";
+  root.dataset.themeChoice = choice;
+  root.dataset.theme = choice !== "system" ? choice
+    : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+}());
+</script>
 </head>
 <body>
 
 <a class="skip" href="#work">Skip to the work</a>
 
 <div class="page">
+
+  <div class="topbar">
+    <button class="theme-toggle" id="theme-toggle" type="button" title="Switch between system, light and dark">
+      <span class="theme-icon" aria-hidden="true">
+        <svg data-mode="system" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="12.5" rx="2"/><path d="M8.5 20.5h7M12 16.5v4"/></svg>
+        <svg data-mode="light" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        <svg data-mode="dark" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </span>
+      <span class="vh">Theme:</span>
+      <span class="theme-name">
+        <span data-mode="system">System</span>
+        <span data-mode="light">Light</span>
+        <span data-mode="dark">Dark</span>
+      </span>
+    </button>
+  </div>
 
   <!-- ============ hero ============ -->
   <section class="bento" aria-label="Introduction">
@@ -344,6 +373,35 @@
 
 <script>
 (function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var order = ['system', 'light', 'dark'];
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // data-theme-choice is what the visitor picked; data-theme is what that
+  // resolves to right now, which for "system" is whatever the OS says.
+  function paint() {
+    var choice = root.dataset.themeChoice;
+    root.dataset.theme = choice !== 'system' ? choice
+      : (prefersDark.matches ? 'dark' : 'light');
+  }
+
+  toggle.addEventListener('click', function () {
+    var next = order[(order.indexOf(root.dataset.themeChoice) + 1) % order.length];
+    root.dataset.themeChoice = next;
+    try {
+      if (next === 'system') localStorage.removeItem('theme');
+      else localStorage.setItem('theme', next);
+    } catch (e) {}
+    paint();
+  });
+
+  // Follow the OS live while the pick is "system".
+  if (prefersDark.addEventListener) prefersDark.addEventListener('change', paint);
+  else if (prefersDark.addListener) prefersDark.addListener(paint);
+}());
+
+(function () {
   var layers = Array.prototype.slice.call(document.querySelectorAll('.tile-layer'));
   var projects = Array.prototype.slice.call(document.querySelectorAll('.tile-project'));
   var status = document.getElementById('status');
@@ -367,11 +425,6 @@
     }
   });
 
-  var palette = {};
-  layers.forEach(function (l) {
-    palette[l.dataset.layer] = getComputedStyle(l).getPropertyValue('--layer').trim();
-  });
-
   // Each project shows a dot per layer it touches, dimmed for the ones it does not.
   var order = layers.map(function (l) { return l.dataset.layer; });
   var names = {};
@@ -381,7 +434,9 @@
     var touches = p.dataset.layers.split(' ');
     p.querySelector('.dots').innerHTML = order.map(function (key) {
       var on = touches.indexOf(key) !== -1;
-      return '<i style="background:' + palette[key] + '" class="' + (on ? '' : 'off') +
+      // The colour comes from a class, not an inline hex, so the dots
+      // re-paint with everything else when the theme changes.
+      return '<i class="l-' + key + (on ? '' : ' off') +
              '" title="' + names[key] + '"></i>';
     }).join('');
   });
