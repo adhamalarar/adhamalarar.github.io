@@ -57,6 +57,23 @@
     margin-top: 14pt; padding-top: 4pt;
     font-size: 8.4pt; color: #666; text-align: center;
   }
+
+  /* Read on a screen in the dark, this page is a sheet of paper held up to
+     your face. Scoped to screen, so print — and the generated PDF — keeps
+     the light palette exactly as it is. There is no toggle here: the CV is
+     a print document with no JavaScript, so it just follows the OS. */
+  @media screen and (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+    body { background: #14171a; color: #e4e7ea; }
+    .name { background: #1e2a33; }
+    h1, .degree, .focus, h2 { color: #9cc3dd; }
+    h2 { border-bottom-color: #4b6b81; }
+    .contact { background: #1a242b; color: #bcc4ca; }
+    .when { color: #a2aab0; }
+    .what h3, .skills b, .langs b { color: #f1f4f6; }
+    .what .org { color: #c1c8cd; }
+    footer { color: #8c9499; }
+  }
 </style>
 </head>
 <body>

@@ -4,9 +4,17 @@
    warm cream page, near-white tiles at 28px radius, one lavender
    accent tile per grid, indigo #6366F1, system-ui, uppercase
    micro-labels, and a single scroll-reveal per tile.
+
+   Theme: three states. The visitor picks light or dark with the
+   toggle in the corner, or leaves it on System and follows the OS.
+   The choice lives on <html> as data-theme-choice (system|light|
+   dark); the theme actually painted lives beside it as data-theme
+   (light|dark), resolved before first paint so there is no flash.
    --------------------------------------------------------------- */
 
 :root {
+  color-scheme: light;
+
   --page:        #faf7f2;
   --tile:        #fdfcf9;
   --tile-line:   rgba(22, 21, 26, .05);
@@ -21,10 +29,10 @@
   --btn-from:    #1e1e22;
   --hairline:    rgba(22, 21, 26, .08);
 
-  --l-interface: #7c9cff;
-  --l-services:  #6366f1;
-  --l-data:      #4f46e5;
-  --l-infra:     #312e81;
+  --l-interface:  #7c9cff;
+  --l-perception: #6366f1;
+  --l-services:   #4f46e5;
+  --l-infra:      #312e81;
 
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --serif: Georgia, "Times New Roman", serif;
@@ -34,8 +42,15 @@
   --pad: clamp(1.4rem, 3vw, 2rem);
 }
 
+/* The dark palette, written twice on purpose: once for the OS
+   preference (which also covers visitors without JavaScript, where
+   the toggle is hidden) and once for an explicit pick of dark. The
+   two blocks must stay in sync. */
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
     --page:        #0e0e12;
     --tile:        #17171c;
     --tile-line:   rgba(255, 255, 255, .07);
@@ -50,11 +65,34 @@
     --btn-from:    #33336a;
     --hairline:    rgba(255, 255, 255, .1);
 
-    --l-interface: #93aeff;
-    --l-services:  #8a8cf8;
-    --l-data:      #7a73f0;
-    --l-infra:     #5b57c9;
+    --l-interface:  #93aeff;
+    --l-perception: #8a8cf8;
+    --l-services:   #7a73f0;
+    --l-infra:      #5b57c9;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page:        #0e0e12;
+  --tile:        #17171c;
+  --tile-line:   rgba(255, 255, 255, .07);
+  --tile-hover:  rgba(255, 255, 255, .18);
+  --tile-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 12px 32px -16px rgba(0, 0, 0, .7);
+  --accent-tile: #1e1e2e;
+  --ink:         #ededf2;
+  --heading:     #f6f6fa;
+  --muted:       rgba(237, 237, 242, .62);
+  --faint:       rgba(237, 237, 242, .42);
+  --accent:      #8a8cf8;
+  --btn-from:    #33336a;
+  --hairline:    rgba(255, 255, 255, .1);
+
+  --l-interface:  #93aeff;
+  --l-perception: #8a8cf8;
+  --l-services:   #7a73f0;
+  --l-infra:      #5b57c9;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -82,6 +120,56 @@ a { color: var(--accent); }
 
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 1.5rem; top: 1.5rem; background: var(--tile); padding: .7rem 1.2rem; border-radius: 999px; }
+
+/* ---------------- theme toggle ---------------- */
+
+.topbar { display: flex; justify-content: flex-end; padding-top: .5rem; }
+
+/* Nothing to toggle without JavaScript — the OS preference decides. */
+.theme-toggle { display: none; }
+
+.js .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font: inherit;
+  font-size: .8125rem;
+  font-weight: 600;
+  padding: .45rem 1rem .45rem .8rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--tile);
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 200ms, background-color 200ms;
+}
+.theme-toggle:hover { border-color: var(--tile-hover); }
+
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* One icon and one word at a time: whichever matches the current pick. */
+.theme-toggle [data-mode] { display: none; }
+:root[data-theme-choice="system"] .theme-toggle [data-mode="system"],
+:root[data-theme-choice="light"]  .theme-toggle [data-mode="light"],
+:root[data-theme-choice="dark"]   .theme-toggle [data-mode="dark"] { display: block; }
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 
 /* ---------------- grid ---------------- */
 
@@ -245,10 +333,10 @@ h3 { margin: 0 0 .35rem; font-size: 1.15rem; font-weight: 700; letter-spacing: -
   font: inherit;
   color: inherit;
 }
-.tile-layer[data-layer="interface"] { --layer: var(--l-interface); }
-.tile-layer[data-layer="services"]  { --layer: var(--l-services); }
-.tile-layer[data-layer="data"]      { --layer: var(--l-data); }
-.tile-layer[data-layer="infra"]     { --layer: var(--l-infra); }
+.tile-layer[data-layer="interface"]  { --layer: var(--l-interface); }
+.tile-layer[data-layer="perception"] { --layer: var(--l-perception); }
+.tile-layer[data-layer="services"]   { --layer: var(--l-services); }
+.tile-layer[data-layer="infra"]      { --layer: var(--l-infra); }
 
 .tile-layer[aria-pressed="true"] {
   background: var(--accent-tile);
@@ -282,8 +370,13 @@ h3 { margin: 0 0 .35rem; font-size: 1.15rem; font-weight: 700; letter-spacing: -
 .metric { font-size: .75rem; color: var(--faint); text-align: right; }
 
 .dots { display: flex; gap: 5px; margin: .9rem 0 .75rem; }
-.dots i { width: 8px; height: 8px; border-radius: 50%; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--layer, var(--accent)); }
 .dots i.off { opacity: .16; }
+
+.dots i.l-interface  { --layer: var(--l-interface); }
+.dots i.l-perception { --layer: var(--l-perception); }
+.dots i.l-services   { --layer: var(--l-services); }
+.dots i.l-infra      { --layer: var(--l-infra); }
 
 .tile-links { display: flex; gap: 1.1rem; font-size: .875rem; font-weight: 600; }
 .tile-links a { text-decoration: none; }
