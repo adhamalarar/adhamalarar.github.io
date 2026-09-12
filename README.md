@@ -45,6 +45,19 @@ picked, and `data-theme` is what that resolves to right now (`light` or `dark`).
 A small script in `<head>` sets both before the first paint, so a visitor who
 picked dark never sees a flash of cream.
 
+**When you edit `style.css`, bump the `?v=` on its `<link>` in `index.html`.**
+GitHub Pages serves both files under unchanging URLs with `max-age=600`, so a
+returning visitor can otherwise get new HTML with a stale stylesheet — which is
+exactly how the toggle first shipped broken on mobile. The version query is the
+whole cache-busting mechanism; there is no build step to do it for you.
+
+Which icon and which word the toggle shows is decided in JavaScript, not CSS,
+for the same reason: the script sits in `index.html` beside the markup, so the
+two cannot fall out of step. The icons also carry their size and stroke as SVG
+attributes, and the button ships with the `hidden` attribute for the no-JS case,
+so a missing stylesheet degrades to a small plain button rather than three
+full-size black icons in a white box.
+
 To restyle a theme, edit the palettes at the top of `style.css`. The dark one is
 written twice on purpose — once under `prefers-color-scheme: dark` (which is
 also what visitors without JavaScript get, since the toggle is hidden for them)
