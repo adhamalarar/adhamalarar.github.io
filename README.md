@@ -1,38 +1,47 @@
 # Portfolio
 
-Static site. Two files, no build step, no dependencies, no webfonts.
+Static site. No build step, no dependencies, no third-party requests.
 
-    index.html   all content, plus ~70 lines of vanilla JS at the bottom
-    style.css    tokens, tile system, bento grid (light and dark follow the OS)
-    cv.html      the English CV; edit this, then regenerate cv.pdf (see below)
-    cv.pdf       generated from cv.html — what the Download CV button serves
+    index.html            all content in both languages, plus ~110 lines of vanilla JS
+    style.css             tokens, grid, the landmark figure (light and dark follow the OS)
+    font/archivo-latin.woff2   the one webfont, served from this domain
+    cv.html               the English CV; edit this, then regenerate cv.pdf (see below)
+    cv.pdf                generated from cv.html — what the CV button serves
 
 ## The idea
 
-A bento grid: rounded tiles of varied widths on warm cream, styled after
-<https://sitesplaced.com/s/demo-bento>. Tokens (radius 28px, `#faf7f2` page,
-`#6366F1` indigo, uppercase micro-labels, 0.6s scroll reveal) are taken from that
-reference's own design system.
+Otl Aicher drew the 1972 Munich pictograms by reducing a person to points joined
+by segments on a 90/45 degree grid. MediaPipe pose landmarks do the same thing
+fifty years later. The site is built in that system: flat colour fields, a strict
+grid, no shadows or gradients, and a landmark figure as the only ornament.
 
-The four layers you work across — Interface, Perception, Services and data,
-Infrastructure — are tiles you can click. Clicking one filters the project tiles
-to the work that touches that layer. Each project tile shows four dots, lit for
-the layers it spans, using the same colours as the layer tiles.
+The four layers — Interface, Perception, Services and data, Infrastructure — each
+own a colour, and each owns a part of the figure: arms are the interface, the head
+is perception, the torso is services, the legs are infrastructure. Clicking a layer
+filters the projects and dims the rest of the figure to the part you selected.
+
+Type is Archivo, one variable family carrying both weight and width. It is served
+from this domain rather than from Google Fonts, so no visitor data leaves the site.
 
 ## Editing
 
-Search `index.html` for `TODO` — every spot that needs your words is marked.
+**Both languages live in the markup.** English is the element's own text; German is
+its `data-de` attribute. A German browser gets German first, the choice is
+remembered, and there is nothing else to keep in sync:
 
-- **Add a project:** copy a whole `<article class="tile ... tile-project">`. Set
-  `data-layers` to the layers it touches (`interface perception services infra`). That
-  one attribute drives the filter, the dots, and the per-layer counts, all
-  computed at load, so nothing goes stale.
-- **Change a tile's width:** swap its `span2` / `span3` / `span4` class. The grid
-  is six columns and collapses to two, then one, on narrow screens.
-- **Add a role:** copy a `.tile-role` block. Newest first.
+    <p data-de="Neben dem Studium.">Alongside my studies.</p>
 
-Colours are the custom properties at the top of `style.css`, with a dark set in
-the `prefers-color-scheme` block below them.
+Search `index.html` for `TODO` — the availability band has two spots worth your
+attention (start date, and whether to state your work authorisation).
+
+- **Add a project:** copy an `<article class="project">`. Set `data-layers` to the
+  layers it touches (`interface perception services infra`). That one attribute
+  drives the filter, the landmark dots and the per-layer counts, all computed at
+  load, so nothing goes stale.
+- **Add a role:** copy an `.entry` block. Newest first.
+
+Colours are the custom properties at the top of `style.css`, with a dark set in the
+`prefers-color-scheme` block below them.
 
 ## Regenerating the CV PDF
 
@@ -47,8 +56,5 @@ Edit `cv.html`, then:
 
 ## Deploy (GitHub Pages)
 
-    git init && git add -A && git commit -m "portfolio"
-    gh repo create <your-username>.github.io --public --source=. --push
-
-Then Settings → Pages → Source: `main`, folder `/`. Live at
-`https://<your-username>.github.io` in about a minute.
+Push to `main`. Settings → Pages → Source: `main`, folder `/`. `CNAME` points the
+site at alarar.de.

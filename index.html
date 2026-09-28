@@ -4,437 +4,427 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Adham Al-Arar — Applied computer science, Berlin</title>
-<meta name="description" content="Applied computer science student at HTW Berlin. System integration, web systems, and computer-vision interfaces.">
+<meta name="description" content="Applied computer science student at HTW Berlin. Looking for a working-student role, 20 h/week, in Berlin or remote. System integration, web systems and computer-vision interfaces.">
+<link rel="preload" href="font/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%231E1E22'/><circle cx='16' cy='16' r='5' fill='%236366F1'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23121316'/><circle cx='16' cy='9' r='4' fill='%23a78bde'/><path d='M16 14v8M9 27l7-5 7 5' stroke='%234ea8e8' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
 <script>document.documentElement.className = "js";</script>
 </head>
-<body>
 
-<a class="skip" href="#work">Skip to the work</a>
+<!-- data-title-de: the page title swaps with the language -->
+<body data-title-de="Adham Al-Arar — Angewandte Informatik, Berlin">
+
+<a class="skip" href="#work" data-de="Zu den Projekten springen">Skip to the work</a>
 
 <div class="page">
 
+  <header class="topbar">
+    <a class="mark" href="/">alarar.de</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+      <button type="button" data-lang="en" aria-pressed="true">English</button>
+    </div>
+  </header>
+
   <!-- ============ hero ============ -->
-  <section class="bento" aria-label="Introduction">
-
-    <div class="tile span4 tile-name reveal">
-      <h1>Adham Al-Arar</h1>
-      <p class="tagline">I build web systems end to end — camera-driven interfaces, the services
-        behind them, and the Docker and CI that get them running.</p>
-      <div class="links">
-        <a class="btn primary" href="cv.pdf">Download CV</a>
-        <a class="btn" href="mailto:adham@alarar.de">Email me</a>
+  <section class="hero" aria-label="Introduction">
+    <div>
+      <h1 class="name">Adham <span>Al-Arar</span></h1>
+      <p class="lede" data-de="Ich baue Websysteme von der Kamera bis zum Deployment: kamerabasierte Oberflächen, die Dienste dahinter und das Docker- und CI-Setup, mit dem sie am Ende auch laufen.">I build web systems end to end: camera-driven interfaces, the services behind them, and the Docker and CI that get them running.</p>
+      <div class="hero-actions">
+        <a class="btn solid" href="mailto:adham@alarar.de" data-de="Schreiben Sie mir">Email me</a>
+        <a class="btn" href="cv.pdf" data-de="Lebenslauf (PDF, englisch)">Download CV</a>
         <a class="btn" href="https://github.com/adhamalarar">GitHub</a>
-        <!-- TODO: your LinkedIn URL, or delete this button -->
-        <a class="btn" href="https://linkedin.com/in/">LinkedIn</a>
       </div>
     </div>
 
-    <div class="tile span2 accent tile-status reveal">
-      <p class="label"><span class="dot"></span>Looking for</p>
-      <div>
-        <!-- TODO: I inferred this from your CV — correct it if you want something else -->
-        <p class="value">Working-student roles and internships</p>
-        <p class="caption">Berlin, or remote</p>
-      </div>
-    </div>
+    <div class="figure">
+      <!-- Otl Aicher drew people as points joined by segments. So does MediaPipe.
+           Each limb group carries the colour of the layer it stands for. -->
+      <svg class="fig" viewBox="0 0 200 290" role="img" aria-labelledby="figure-title">
+        <title id="figure-title" data-de="Eine Strichfigur aus Gelenkpunkten, wie sie eine Pose-Erkennung aus einem Kamerabild liest.">A stick figure of joint landmarks, of the kind pose detection reads out of a camera frame.</title>
 
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">Where</p>
-      <div>
-        <p class="value">Berlin, DE</p>
-        <p class="caption">GMT+1</p>
-      </div>
-    </div>
+        <g data-part="services">
+          <path class="bone" pathLength="1" d="M100 62 L100 152"/>
+          <path class="bone" pathLength="1" d="M76 76 L124 76"/>
+          <path class="bone" pathLength="1" d="M82 158 L118 158"/>
+          <circle class="joint" cx="100" cy="152" r="5"/>
+          <circle class="joint" cx="82" cy="158" r="5"/>
+          <circle class="joint" cx="118" cy="158" r="5"/>
+        </g>
 
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">Studying</p>
-      <div>
-        <p class="value small">B.Sc. Applied Computer Science</p>
-        <p class="caption">HTW Berlin, since 2021</p>
-      </div>
-    </div>
+        <g data-part="interface">
+          <path class="bone" pathLength="1" d="M76 76 L56 110 L46 148"/>
+          <path class="bone" pathLength="1" d="M124 76 L150 100 L166 62"/>
+          <circle class="joint" cx="76" cy="76" r="5"/>
+          <circle class="joint" cx="124" cy="76" r="5"/>
+          <circle class="joint" cx="56" cy="110" r="5"/>
+          <circle class="joint" cx="150" cy="100" r="5"/>
+          <circle class="joint" cx="46" cy="148" r="6"/>
+          <circle class="joint" cx="166" cy="62" r="6"/>
+        </g>
 
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">Languages</p>
-      <div>
-        <p class="value small">Arabic&nbsp;· German&nbsp;· English</p>
-        <p class="caption">Native · business fluent · good</p>
-      </div>
-    </div>
+        <g data-part="infra">
+          <path class="bone" pathLength="1" d="M82 158 L76 205 L70 252"/>
+          <path class="bone" pathLength="1" d="M118 158 L122 203 L130 250"/>
+          <circle class="joint" cx="76" cy="205" r="5"/>
+          <circle class="joint" cx="122" cy="203" r="5"/>
+          <circle class="joint" cx="70" cy="252" r="5"/>
+          <circle class="joint" cx="130" cy="250" r="5"/>
+          <path class="bone ground" pathLength="1" d="M34 266 L166 266"/>
+        </g>
 
+        <g data-part="perception">
+          <path class="bone" pathLength="1" d="M100 51 L100 62"/>
+          <circle class="bone" pathLength="1" cx="100" cy="34" r="17"/>
+          <circle class="joint" cx="100" cy="34" r="4.5"/>
+          <circle class="joint" cx="100" cy="62" r="5"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============ availability ============ -->
+  <!-- The four things a German employer checks before reading anything else.
+       TODO: correct "Immediately" / "ab sofort" if you have a start date.
+       TODO: if your residence permit already allows the work, say so here —
+             it removes the one doubt that stops student applications. -->
+  <section class="band" aria-label="Availability">
+    <div>
+      <p class="data" data-de="Ich suche">Looking for</p>
+      <strong class="live" data-de="Werkstudent, 20 Std./Woche">Working student, 20 h/week</strong>
+    </div>
+    <div>
+      <p class="data" data-de="Nach dem Abschluss">After graduation</p>
+      <strong data-de="Berufseinstieg als Junior-Entwickler">Junior developer, full time</strong>
+    </div>
+    <div>
+      <p class="data" data-de="Verfügbar">Available</p>
+      <strong data-de="ab sofort">Immediately</strong>
+    </div>
+    <div>
+      <p class="data" data-de="Standort">Based in</p>
+      <strong data-de="Berlin, remote möglich">Berlin, open to remote</strong>
+    </div>
   </section>
 
   <!-- ============ about ============ -->
-  <section class="bento" aria-label="About">
-
-    <div class="tile span4 reveal">
-      <p class="label">About</p>
-      <h2 class="tile-headline">I like making computers notice people.</h2>
-      <p class="prose">I study applied computer science at HTW Berlin, and most of what I have
-        built sits somewhere between a camera and a database. My last project read body
-        positions and gestures from a webcam; my internship before that was the other end of
-        the same problem — containers, reverse proxies and CI, so that something built in a
-        seminar can actually survive being deployed. I am drawn to digital assistance systems
-        and to the point where a person and a machine have to understand each other.</p>
+  <section class="strip about" aria-labelledby="about-heading">
+    <h2 class="heading" id="about-heading" data-de="Ich bringe Computern bei, Menschen zu bemerken.">I like making computers notice people.</h2>
+    <div>
+      <p class="prose" data-de="Ich studiere Angewandte Informatik an der HTW Berlin, und fast alles, was ich bisher gebaut habe, liegt irgendwo zwischen einer Kamera und einer Datenbank. In meinem letzten Projekt habe ich Körperhaltungen und Gesten aus einem Webcam-Bild gelesen; im Praktikum davor ging es um dasselbe Problem von der anderen Seite — Container, Reverse Proxys und CI, damit etwas aus einem Seminar auch im Betrieb überlebt. Mich interessieren digitale Assistenzsysteme und genau die Stelle, an der Mensch und Maschine einander verstehen müssen.">I study applied computer science at HTW Berlin, and most of what I have built sits somewhere between a camera and a database. My last project read body positions and gestures from a webcam; my internship before that was the other end of the same problem — containers, reverse proxies and CI, so that something built in a seminar can actually survive being deployed. I am drawn to digital assistance systems and to the point where a person and a machine have to understand each other.</p>
     </div>
-
-    <div class="tile span2 accent tile-stat reveal">
-      <p class="label">Focus</p>
-      <div>
-        <p class="value">Digital assistance systems, system integration, computer vision</p>
-      </div>
-    </div>
-
   </section>
 
   <!-- ============ stack ============ -->
-  <section aria-labelledby="stack-heading">
-    <p class="eyebrow">Stack</p>
-    <h2 class="section-headline" id="stack-heading">From camera input to the interface</h2>
-    <p class="instruction">The layers I work across. Choose one to filter the work below.</p>
+  <section class="strip" aria-labelledby="stack-heading">
+    <div class="strip-head">
+      <h2 class="heading" id="stack-heading" data-de="Vom Kamerabild bis zur Oberfläche">From camera input to the interface</h2>
+      <p class="sub" data-de="Die vier Ebenen, in denen ich arbeite. Eine auswählen, um die Projekte darunter zu filtern.">The four layers I work across. Choose one to filter the work below.</p>
+    </div>
 
-    <div class="bento stack">
-
-      <button class="tile tile-layer reveal" data-layer="interface" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Interface</p>
-        <div>
-          <p class="value">JavaScript&nbsp;· HTML/CSS&nbsp;· Webcam APIs</p>
-          <p class="caption"><span class="count"></span></p>
-        </div>
+    <div class="layers">
+      <button class="layer" type="button" data-layer="interface" aria-pressed="false">
+        <span class="layer-name" data-de="Oberfläche">Interface</span>
+        <span class="layer-tech">JavaScript, HTML/CSS, Webcam APIs</span>
+        <span class="layer-count data"></span>
       </button>
 
-      <button class="tile tile-layer reveal" data-layer="perception" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Perception</p>
-        <div>
-          <p class="value">MediaPipe Pose, Face and Hands&nbsp;· landmark interaction</p>
-          <p class="caption"><span class="count"></span></p>
-        </div>
+      <button class="layer" type="button" data-layer="perception" aria-pressed="false">
+        <span class="layer-name" data-de="Wahrnehmung">Perception</span>
+        <span class="layer-tech" data-de="MediaPipe Pose, Face und Hands, Interaktion über Landmarks">MediaPipe Pose, Face and Hands, landmark interaction</span>
+        <span class="layer-count data"></span>
       </button>
 
-      <button class="tile tile-layer reveal" data-layer="services" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Services and data</p>
-        <div>
-          <p class="value">Node.js&nbsp;· Django&nbsp;· Java&nbsp;· PostgreSQL&nbsp;· MongoDB&nbsp;· Redis</p>
-          <p class="caption"><span class="count"></span></p>
-        </div>
+      <button class="layer" type="button" data-layer="services" aria-pressed="false">
+        <span class="layer-name" data-de="Dienste und Daten">Services and data</span>
+        <span class="layer-tech">Node.js, Django, Java, PostgreSQL, MongoDB, Redis</span>
+        <span class="layer-count data"></span>
       </button>
 
-      <button class="tile tile-layer reveal" data-layer="infra" aria-pressed="false">
-        <p class="label"><span class="dot"></span>Infrastructure</p>
-        <div>
-          <p class="value">Docker&nbsp;· Nginx&nbsp;· Cloudron&nbsp;· GitLab CI/CD&nbsp;· Linux</p>
-          <p class="caption"><span class="count"></span></p>
-        </div>
+      <button class="layer" type="button" data-layer="infra" aria-pressed="false">
+        <span class="layer-name" data-de="Infrastruktur">Infrastructure</span>
+        <span class="layer-tech">Docker, Nginx, Cloudron, GitLab CI/CD, Linux</span>
+        <span class="layer-count data"></span>
       </button>
-
     </div>
   </section>
 
   <!-- ============ work ============ -->
-  <section id="work" aria-labelledby="work-heading">
-    <p class="eyebrow">Projects</p>
-    <h2 class="section-headline" id="work-heading">What I have built so far</h2>
-    <p class="instruction"><span id="status">Three projects.</span>
-      <button class="clear" id="clear" hidden>Show every project</button></p>
+  <section class="strip" id="work" aria-labelledby="work-heading">
+    <div class="strip-head">
+      <h2 class="heading" id="work-heading" data-de="Was ich bisher gebaut habe">What I have built so far</h2>
+    </div>
 
-    <div class="bento work">
+    <div class="filterbar">
+      <p class="sub" id="status"></p>
+      <button class="clear" type="button" id="clear" hidden data-de="Alle Projekte zeigen">Show every project</button>
+    </div>
 
-      <article class="tile span6 tile-project reveal" data-layers="interface perception">
-        <div class="tile-top">
-          <span class="badge">Team project</span>
-          <span class="metric">HTW Berlin, 2026</span>
+    <div class="work">
+
+      <article class="project" data-layers="interface perception">
+        <div class="when">
+          <p class="data">2026</p>
+          <p class="data" data-de="Teamprojekt, HTW Berlin">Team project, HTW Berlin</p>
         </div>
         <div>
           <h3>Body Explorer</h3>
-          <p class="prose">A digital learning and assistance system: a web prototype that
-            recognises body parts and gestures through an ordinary webcam. I worked on the
-            layered architecture that carries camera input through perception and
-            interpretation up to the interface — the interesting part was deciding what
-            counts as a gesture and what is just a person moving. Organised in the team with
-            GitHub and Kanban, where I also worked on integration and project management.</p>
-          <p class="built">JavaScript, HTML/CSS, MediaPipe Pose, Face and Hands, Webcam APIs.</p>
-          <p class="dots"></p>
-          <!-- TODO: add the repository link if it is public -->
+          <p class="prose meta" data-de="Ein digitales Lern- und Assistenzsystem: ein Web-Prototyp, der Körperteile und Gesten über eine normale Webcam erkennt. Ich habe an der Schichtenarchitektur gearbeitet, die das Kamerabild über Wahrnehmung und Interpretation bis zur Oberfläche trägt — spannend war dabei die Frage, was als Geste zählt und was einfach nur Bewegung ist. Im Team mit GitHub und Kanban organisiert, wo ich auch Integration und Projektmanagement übernommen habe.">A digital learning and assistance system: a web prototype that recognises body parts and gestures through an ordinary webcam. I worked on the layered architecture that carries camera input through perception and interpretation up to the interface — the interesting part was deciding what counts as a gesture and what is just a person moving. Organised in the team with GitHub and Kanban, where I also worked on integration and project management.</p>
+          <p class="built">JavaScript, HTML/CSS, MediaPipe Pose, Face and Hands, Webcam APIs</p>
         </div>
+        <div class="side"></div>
       </article>
 
-      <article class="tile span3 tile-project reveal" data-layers="interface services">
-        <div class="tile-top">
-          <span class="badge">University</span>
-          <span class="metric">2023</span>
+      <article class="project" data-layers="interface services">
+        <div class="when">
+          <p class="data">2023</p>
+          <p class="data" data-de="Hochschulprojekt">University project</p>
         </div>
         <div>
-          <h3>Sustainability Map Berlin</h3>
-          <p class="prose">A website with an interactive map of sustainable places across
-            Berlin, with role-based permissions so different users can add and manage
-            locations rather than everyone editing everything.</p>
-          <p class="built">HTML, CSS, JavaScript, Node.js, MongoDB.</p>
-          <p class="dots"></p>
+          <h3 data-de="Nachhaltigkeitskarte Berlin">Sustainability Map Berlin</h3>
+          <p class="prose meta" data-de="Eine Website mit einer interaktiven Karte nachhaltiger Orte in Berlin, mit rollenbasierten Rechten, damit verschiedene Nutzergruppen Orte pflegen können, statt dass jeder alles bearbeitet.">A website with an interactive map of sustainable places across Berlin, with role-based permissions so different users can add and manage locations rather than everyone editing everything.</p>
+          <p class="built">HTML, CSS, JavaScript, Node.js, MongoDB</p>
         </div>
+        <div class="side"></div>
       </article>
 
-      <article class="tile span3 tile-project reveal" data-layers="services">
-        <div class="tile-top">
-          <span class="badge">University</span>
-          <span class="metric">2022</span>
+      <article class="project" data-layers="services">
+        <div class="when">
+          <p class="data">2022</p>
+          <p class="data" data-de="Hochschulprojekt">University project</p>
         </div>
         <div>
-          <h3>Book Collection CLI</h3>
-          <p class="prose">A Java command-line tool for managing book collections, built on a
-            linked list with custom sorting — the project where data structures stopped being
-            an exam topic and became something I had to make behave.</p>
-          <p class="built">Java, Comparator interface, data structures and algorithms.</p>
-          <p class="dots"></p>
+          <h3 data-de="Büchersammlung (CLI)">Book Collection CLI</h3>
+          <p class="prose meta" data-de="Ein Java-Kommandozeilenprogramm zur Verwaltung von Büchersammlungen, aufgebaut auf einer verketteten Liste mit eigener Sortierung — das Projekt, in dem Datenstrukturen aufgehört haben, ein Prüfungsthema zu sein, und angefangen haben, etwas zu sein, das ich zum Laufen bringen musste.">A Java command-line tool for managing book collections, built on a linked list with custom sorting — the project where data structures stopped being an exam topic and became something I had to make behave.</p>
+          <p class="built" data-de="Java, Comparator-Interface, Datenstrukturen und Algorithmen">Java, Comparator interface, data structures and algorithms</p>
         </div>
+        <div class="side"></div>
       </article>
 
     </div>
-    <p class="empty" id="empty" hidden>Nothing at this layer yet.</p>
+    <p class="empty" id="empty" hidden data-de="In dieser Ebene noch nichts.">Nothing at this layer yet.</p>
   </section>
 
   <!-- ============ experience ============ -->
-  <section aria-labelledby="history-heading">
-    <p class="eyebrow">Experience</p>
-    <h2 class="section-headline" id="history-heading">Where I have worked</h2>
+  <section class="strip" aria-labelledby="history-heading">
+    <div class="strip-head">
+      <h2 class="heading" id="history-heading" data-de="Wo ich gearbeitet habe">Where I have worked</h2>
+    </div>
 
-    <div class="bento history">
-
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">t</span>
-          <div>
-            <p class="role-org">think3ddd, Berlin</p>
-            <p class="label">Feb — May 2026</p>
-          </div>
+    <div class="history">
+      <div class="entry">
+        <p class="when data">02/2026 — 05/2026</p>
+        <div>
+          <p class="who">think3ddd, Berlin</p>
+          <p class="role" data-de="Praktikant, Systemintegration">Intern, system integration</p>
         </div>
-        <p class="role-title">Intern, system integration</p>
-        <p class="prose">Built and tested a secured Supabase Studio environment on Cloudron,
-          running in Docker behind an Nginx reverse proxy. Worked with PostgreSQL, Redis,
-          Django, Linux and GitLab CI/CD on internal web and backend systems, analysed logs
-          and performance problems, and wrote the deployment configuration and the technical
-          documentation that went with it.</p>
+        <p class="prose" data-de="Eine abgesicherte Supabase-Studio-Umgebung auf Cloudron aufgebaut und getestet, in Docker hinter einem Nginx-Reverse-Proxy. Mit PostgreSQL, Redis, Django, Linux und GitLab CI/CD an internen Web- und Backendsystemen gearbeitet, Logs und Performanceprobleme analysiert und die Deployment-Konfiguration samt technischer Dokumentation geschrieben.">Built and tested a secured Supabase Studio environment on Cloudron, running in Docker behind an Nginx reverse proxy. Worked with PostgreSQL, Redis, Django, Linux and GitLab CI/CD on internal web and backend systems, analysed logs and performance problems, and wrote the deployment configuration and the technical documentation that went with it.</p>
       </div>
 
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">P</span>
-          <div>
-            <p class="role-org">Persos Personal Services UG, Berlin</p>
-            <p class="label">Since Jan 2020</p>
-          </div>
+      <div class="entry">
+        <p class="when data" data-de="seit 01/2020">Since 01/2020</p>
+        <div>
+          <p class="who">Persos Personal Services UG, Berlin</p>
+          <p class="role" data-de="Assistenz">Assistant</p>
         </div>
-        <p class="role-title">Assistant</p>
-        <p class="prose">Alongside my studies.</p>
+        <p class="prose" data-de="Neben dem Studium.">Alongside my studies.</p>
       </div>
-
     </div>
   </section>
 
   <!-- ============ education ============ -->
-  <section aria-labelledby="education-heading">
-    <p class="eyebrow">Education</p>
-    <h2 class="section-headline" id="education-heading">How I got here</h2>
+  <section class="strip" aria-labelledby="education-heading">
+    <div class="strip-head">
+      <h2 class="heading" id="education-heading" data-de="Mein Weg hierher">How I got here</h2>
+    </div>
 
-    <div class="bento history">
-
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">H</span>
-          <div>
-            <p class="role-org">HTW Berlin</p>
-            <p class="label">Since Apr 2021</p>
-          </div>
+    <div class="history">
+      <div class="entry">
+        <p class="when data" data-de="seit 04/2021">Since 04/2021</p>
+        <div>
+          <p class="who">HTW Berlin</p>
+          <p class="role" data-de="B.Sc. Angewandte Informatik">B.Sc. Applied Computer Science</p>
         </div>
-        <p class="role-title">B.Sc. Applied Computer Science</p>
-        <p class="prose">Focus on digital assistance systems, system integration and computer vision.</p>
+        <p class="prose" data-de="Schwerpunkte: digitale Assistenzsysteme, Systemintegration und Computer Vision.">Focus on digital assistance systems, system integration and computer vision.</p>
       </div>
 
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">M</span>
-          <div>
-            <p class="role-org">Ming Cheng Institute, Merseburg</p>
-            <p class="label">Aug 2020 — Jan 2021</p>
-          </div>
+      <div class="entry">
+        <p class="when data">08/2020 — 01/2021</p>
+        <div>
+          <p class="who" data-de="Ming Cheng Institut, Merseburg">Ming Cheng Institute, Merseburg</p>
+          <p class="role">Studienkolleg, T-Kurs</p>
         </div>
-        <p class="role-title">Studienkolleg, T-Kurs</p>
-        <p class="prose">The technical preparatory year that qualifies international students for German universities.</p>
+        <p class="prose" data-de="Das technische Vorbereitungsjahr, das internationale Studierende für ein Studium an deutschen Hochschulen qualifiziert.">The technical preparatory year that qualifies international students for German universities.</p>
       </div>
 
-      <div class="tile span6 tile-role reveal">
-        <div class="role-who">
-          <span class="avatar" aria-hidden="true">N</span>
-          <div>
-            <p class="role-org">The National University, Sana'a</p>
-            <p class="label">Nov 2017 — Jul 2018</p>
-          </div>
+      <div class="entry">
+        <p class="when data">11/2017 — 07/2018</p>
+        <div>
+          <p class="who" data-de="The National University, Sanaa">The National University, Sana'a</p>
+          <p class="role" data-de="Informatik">Computer Science</p>
         </div>
-        <p class="role-title">Computer Science</p>
-        <p class="prose">Where I started, before moving to Germany.</p>
+        <p class="prose" data-de="Wo ich angefangen habe, bevor ich nach Deutschland gekommen bin.">Where I started, before moving to Germany.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- ============ volunteering ============ -->
-  <section class="bento" aria-labelledby="volunteering-heading">
-    <div class="span6">
-      <p class="eyebrow">Volunteering</p>
-      <h2 class="section-headline" id="volunteering-heading">Before all of this</h2>
+  <!-- ============ languages + volunteering ============ -->
+  <section class="strip" aria-labelledby="volunteering-heading">
+    <div class="strip-head">
+      <h2 class="heading" id="volunteering-heading" data-de="Sprachen und Engagement">Languages, and what came before</h2>
     </div>
 
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">2017</p>
-      <div>
-        <p class="value small">Yemen Red Crescent Society</p>
-        <p class="caption">Rayma branch, Sana'a. Care for people injured in the war.</p>
-      </div>
-    </div>
-
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">2016</p>
-      <div>
-        <p class="value small">Shahrazad Association</p>
-        <p class="caption">Sana'a. Food and clothing for people in need.</p>
-      </div>
-    </div>
-
-    <div class="tile span2 tile-stat reveal">
-      <p class="label">2016</p>
-      <div>
-        <p class="value small">Humanity Organization</p>
-        <p class="caption">Sana'a. Community support work.</p>
-      </div>
-    </div>
-
+    <ul class="helped">
+      <li>
+        <p class="data" data-de="Sprachen">Languages</p>
+        <strong data-de="Arabisch, Deutsch, Englisch">Arabic, German, English</strong>
+        <p data-de="Arabisch Muttersprache. Deutsch verhandlungssicher. Englisch gut.">Arabic is my first language, my German is business fluent, and my English is good.</p>
+      </li>
+      <li>
+        <p class="data">2017</p>
+        <strong data-de="Jemenitischer Roter Halbmond">Yemen Red Crescent Society</strong>
+        <p data-de="Zweigstelle Rayma, Sanaa. Betreuung von Menschen, die im Krieg verletzt wurden.">Rayma branch, Sana'a. Care for people injured in the war.</p>
+      </li>
+      <li>
+        <p class="data">2016</p>
+        <strong data-de="Shahrazad-Verein">Shahrazad Association</strong>
+        <p data-de="Sanaa. Lebensmittel- und Kleiderspenden für Menschen in Not.">Sana'a. Food and clothing for people in need.</p>
+      </li>
+    </ul>
   </section>
 
   <!-- ============ contact ============ -->
-  <section class="bento" aria-label="Contact">
-
-    <div class="tile span4 accent tile-contact reveal">
-      <p class="label">Get in touch</p>
-      <h2 class="tile-headline">I read every email. Even the long ones.</h2>
-      <div class="links">
-        <a class="btn primary" href="mailto:adham@alarar.de">Email me</a>
-        <span class="caption">adham@alarar.de</span>
+  <section class="contact" aria-label="Contact">
+    <div>
+      <h2 class="heading" data-de="Ich lese jede E-Mail. Auch die langen.">I read every email. Even the long ones.</h2>
+      <div class="actions">
+        <a class="btn" href="mailto:adham@alarar.de" data-de="Schreiben Sie mir">Email me</a>
+        <span class="data">adham@alarar.de</span>
       </div>
     </div>
 
-    <div class="tile span2 tile-find reveal">
-      <p class="label">Find me</p>
-      <ul class="find">
-        <li><a href="https://github.com/adhamalarar">GitHub</a><span>@adhamalarar</span></li>
-        <!-- TODO: your LinkedIn URL and handle -->
-        <li><a href="https://linkedin.com/in/">LinkedIn</a><span>—</span></li>
-        <li><a href="cv.pdf">CV</a><span>PDF</span></li>
-      </ul>
-      <p class="caption">Berlin, Germany</p>
-    </div>
-
+    <ul class="elsewhere">
+      <li><a href="https://github.com/adhamalarar">GitHub</a><span>@adhamalarar</span></li>
+      <li><a href="cv.pdf" data-de="Lebenslauf">CV</a><span data-de="PDF, englisch">PDF</span></li>
+      <li><a href="mailto:adham@alarar.de" data-de="E-Mail">Email</a><span>adham@alarar.de</span></li>
+    </ul>
   </section>
 
   <footer>
-    <p>Adham Al-Arar, 2026. Hand-built, no framework.</p>
+    <p data-de="Adham Al-Arar, 2026. Von Hand gebaut, ohne Framework.">Adham Al-Arar, 2026. Hand-built, no framework.</p>
+    <p data-de="Keine Cookies, keine Tracker, Schrift von dieser Domain ausgeliefert.">No cookies, no trackers, fonts served from this domain.</p>
   </footer>
 
 </div>
 
 <script>
 (function () {
-  var layers = Array.prototype.slice.call(document.querySelectorAll('.tile-layer'));
-  var projects = Array.prototype.slice.call(document.querySelectorAll('.tile-project'));
+  var layers = Array.prototype.slice.call(document.querySelectorAll('.layer'));
+  var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));
   var status = document.getElementById('status');
   var clear = document.getElementById('clear');
   var empty = document.getElementById('empty');
+  var fig = document.querySelector('.fig');
+  var order = layers.map(function (l) { return l.dataset.layer; });
   var active = null;
+  var lang = 'en';
 
-  function matches(project, layer) {
+  // Strings the script writes itself, in both languages.
+  var words = {
+    en: { all: 'projects', one: 'project', inLayer: 'in', internship: 'From my internship' },
+    de: { all: 'Projekte', one: 'Projekt', inLayer: 'in', internship: 'Aus meinem Praktikum' }
+  };
+
+  function touches(project, layer) {
     return project.dataset.layers.split(' ').indexOf(layer) !== -1;
   }
 
-  // Counts come from the projects themselves, so they stay right when you add one.
-  layers.forEach(function (layer) {
-    var n = projects.filter(function (p) { return matches(p, layer.dataset.layer); }).length;
-    if (n === 0) {
-      // Skills I use at work rather than in a university project — filtering would empty the list.
-      layer.querySelector('.count').textContent = 'From my internship';
-      layer.disabled = true;
-    } else {
-      layer.querySelector('.count').textContent = n + (n === 1 ? ' project' : ' projects');
-    }
+  function nameOf(key) {
+    var el = document.querySelector('.layer[data-layer="' + key + '"] .layer-name');
+    return el.textContent.trim();
+  }
+
+  // ---- language ----
+  // English lives in the markup; German lives in data-de. Swapping is the whole
+  // mechanism, so adding a sentence means adding it in two places and nothing else.
+  var translatable = Array.prototype.slice.call(document.querySelectorAll('[data-de]'));
+  translatable.forEach(function (n) { n.dataset.en = n.innerHTML; });
+
+  var titles = { en: document.title, de: document.body.dataset.titleDe };
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang button'));
+
+  function setLang(next) {
+    lang = next === 'de' ? 'de' : 'en';
+    document.documentElement.lang = lang;
+    document.title = titles[lang];
+    translatable.forEach(function (n) { n.innerHTML = n.dataset[lang]; });
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    render();
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.lang); });
   });
 
-  var palette = {};
-  layers.forEach(function (l) {
-    palette[l.dataset.layer] = getComputedStyle(l).getPropertyValue('--layer').trim();
-  });
-
-  // Each project shows a dot per layer it touches, dimmed for the ones it does not.
-  var order = layers.map(function (l) { return l.dataset.layer; });
-  var names = {};
-  layers.forEach(function (l) { names[l.dataset.layer] = l.querySelector('.label').textContent.trim(); });
-
-  projects.forEach(function (p) {
-    var touches = p.dataset.layers.split(' ');
-    p.querySelector('.dots').innerHTML = order.map(function (key) {
-      var on = touches.indexOf(key) !== -1;
-      return '<i style="background:' + palette[key] + '" class="' + (on ? '' : 'off') +
-             '" title="' + names[key] + '"></i>';
-    }).join('');
-  });
-
-  function apply() {
+  // ---- counts, filter, landmark edges ----
+  function render() {
     var shown = 0;
+
     projects.forEach(function (p) {
-      var visible = !active || matches(p, active);
+      var visible = !active || touches(p, active);
       p.hidden = !visible;
       if (visible) shown += 1;
+
+      // One dot per layer, joined like a landmark edge. Lit where the project reaches.
+      var dots = order.map(function (key, i) {
+        var on = touches(p, key);
+        return (i ? '<s></s>' : '') +
+          '<i class="' + (on ? '' : 'off') + '" style="--c:var(--' + key + ')" title="' + nameOf(key) + '"></i>';
+      }).join('');
+      var reached = order.filter(function (key) { return touches(p, key); }).map(nameOf).join(', ');
+      p.querySelector('.side').innerHTML =
+        '<span class="edge">' + dots + '</span><p class="data">' + reached + '</p>';
     });
+
     layers.forEach(function (l) {
+      var n = projects.filter(function (p) { return touches(p, l.dataset.layer); }).length;
+      // Counts are derived, so they stay right when a project is added.
+      l.querySelector('.layer-count').textContent =
+        n === 0 ? words[lang].internship : n + ' ' + (n === 1 ? words[lang].one : words[lang].all);
+      l.disabled = n === 0;
       l.setAttribute('aria-pressed', String(l.dataset.layer === active));
     });
+
     status.textContent = active
-      ? shown + (shown === 1 ? ' project touches ' : ' projects touch ') + names[active] + '.'
-      : projects.length + ' projects.';
+      ? shown + ' ' + (shown === 1 ? words[lang].one : words[lang].all) + ' ' + words[lang].inLayer + ' ' + nameOf(active) + '.'
+      : projects.length + ' ' + words[lang].all + '.';
     clear.hidden = !active;
     empty.hidden = shown > 0;
+
+    if (active) { fig.dataset.active = active; } else { delete fig.dataset.active; }
   }
 
-  layers.forEach(function (layer) {
-    layer.addEventListener('click', function () {
-      active = active === layer.dataset.layer ? null : layer.dataset.layer;
-      apply();
+  layers.forEach(function (l) {
+    l.addEventListener('click', function () {
+      active = active === l.dataset.layer ? null : l.dataset.layer;
+      render();
     });
   });
+  clear.addEventListener('click', function () { active = null; render(); });
 
-  clear.addEventListener('click', function () { active = null; apply(); });
-  apply();
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  // A German browser gets the German page first; the choice is then remembered.
+  setLang(saved || ((navigator.language || '').slice(0, 2) === 'de' ? 'de' : 'en'));
 
-  // Tiles rise into place once, in the order they sit on the page.
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var tiles = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
-  if (reduced || !('IntersectionObserver' in window)) {
-    tiles.forEach(function (t) { t.classList.add('in'); });
-    return;
-  }
-  var seen = new WeakMap();
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var tile = entry.target;
-      var group = Array.prototype.slice.call(tile.parentNode.children).indexOf(tile);
-      if (!seen.get(tile)) {
-        tile.style.transitionDelay = Math.min(group, 5) * 0.08 + 's';
-        tile.classList.add('in');
-        seen.set(tile, true);
-      }
-      io.unobserve(tile);
-    });
-  }, { rootMargin: '0px 0px -100px 0px' });
-  tiles.forEach(function (t) { io.observe(t); });
+  // ---- the one piece of motion: the figure assembles itself, once ----
+  var bones = Array.prototype.slice.call(fig.querySelectorAll('.bone'));
+  var joints = Array.prototype.slice.call(fig.querySelectorAll('.joint'));
+  bones.forEach(function (b, i) { b.style.animationDelay = (i * 0.07) + 's'; });
+  joints.forEach(function (j, i) { j.style.animationDelay = (0.5 + i * 0.04) + 's'; });
+  requestAnimationFrame(function () { fig.classList.add('drawn'); });
 }());
 </script>
 
