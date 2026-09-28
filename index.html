@@ -6,9 +6,22 @@
 <title>Adham Al-Arar — Applied computer science, Berlin</title>
 <meta name="description" content="Applied computer science student at HTW Berlin. Looking for a working-student role, 20 h/week, in Berlin or remote. System integration, web systems and computer-vision interfaces.">
 <link rel="preload" href="font/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23121316'/><circle cx='16' cy='9' r='4' fill='%23a78bde'/><path d='M16 14v8M9 27l7-5 7 5' stroke='%234ea8e8' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>">
-<script>document.documentElement.className = "js";</script>
+<script>
+// Runs before the first paint, so the right theme is already on <html>
+// and a visitor who picked dark never sees a flash of light.
+(function () {
+  var root = document.documentElement;
+  root.className = "js";
+  var choice = null;
+  try { choice = localStorage.getItem("theme"); } catch (e) {}
+  if (choice !== "light" && choice !== "dark") choice = "system";
+  root.dataset.themeChoice = choice;
+  root.dataset.theme = choice !== "system" ? choice
+    : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+}());
+</script>
 </head>
 
 <!-- data-title-de: the page title swaps with the language -->
@@ -20,9 +33,27 @@
 
   <header class="topbar">
     <a class="mark" href="/">alarar.de</a>
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
-      <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <div class="tools">
+      <!-- Hidden until the script unhides it: there is nothing to toggle without
+           JavaScript. The icons carry size and stroke as attributes, not only as
+           CSS, so the button stays presentable even if the stylesheet is missing. -->
+      <button class="theme-toggle" id="theme-toggle" type="button" hidden>
+        <span class="theme-icon" aria-hidden="true">
+          <svg data-mode="system" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><rect x="2.5" y="4" width="19" height="12.5"/><path d="M8.5 20.5h7M12 16.5v4"/></svg>
+          <svg data-mode="light" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+          <svg data-mode="dark" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </span>
+        <span class="vh" data-de="Farbschema:">Theme:</span>
+        <span class="theme-name">
+          <span data-mode="system" data-de="System">System</span>
+          <span data-mode="light" data-de="Hell">Light</span>
+          <span data-mode="dark" data-de="Dunkel">Dark</span>
+        </span>
+      </button>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="de" aria-pressed="false">Deutsch</button>
+        <button type="button" data-lang="en" aria-pressed="true">English</button>
+      </div>
     </div>
   </header>
 
@@ -319,6 +350,44 @@
 </div>
 
 <script>
+(function () {
+  var root = document.documentElement;
+  var toggle = document.getElementById('theme-toggle');
+  var order = ['system', 'light', 'dark'];
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  var modes = Array.prototype.slice.call(toggle.querySelectorAll('[data-mode]'));
+
+  // data-theme-choice is what the visitor picked; data-theme is what that
+  // resolves to right now, which for "system" is whatever the OS says.
+  function paint() {
+    var choice = root.dataset.themeChoice;
+    root.dataset.theme = choice !== 'system' ? choice
+      : (prefersDark.matches ? 'dark' : 'light');
+    // One icon and one word, chosen here rather than in CSS: an inline display
+    // beats whatever stale stylesheet the browser happens to hold.
+    modes.forEach(function (el) {
+      el.style.display = el.getAttribute('data-mode') === choice ? '' : 'none';
+    });
+  }
+
+  toggle.addEventListener('click', function () {
+    var next = order[(order.indexOf(root.dataset.themeChoice) + 1) % order.length];
+    root.dataset.themeChoice = next;
+    try {
+      if (next === 'system') localStorage.removeItem('theme');
+      else localStorage.setItem('theme', next);
+    } catch (e) {}
+    paint();
+  });
+
+  // Follow the OS live while the pick is "system".
+  if (prefersDark.addEventListener) prefersDark.addEventListener('change', paint);
+  else if (prefersDark.addListener) prefersDark.addListener(paint);
+
+  paint();
+  toggle.hidden = false;
+}());
+
 (function () {
   var layers = Array.prototype.slice.call(document.querySelectorAll('.layer'));
   var projects = Array.prototype.slice.call(document.querySelectorAll('.project'));

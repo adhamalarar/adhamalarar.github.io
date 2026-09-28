@@ -3,7 +3,7 @@
 Static site. No build step, no dependencies, no third-party requests.
 
     index.html            all content in both languages, plus ~110 lines of vanilla JS
-    style.css             tokens, grid, the landmark figure (light and dark follow the OS)
+    style.css             tokens, grid, the landmark figure, light and dark palettes
     font/archivo-latin.woff2   the one webfont, served from this domain
     cv.html               the English CV; edit this, then regenerate cv.pdf (see below)
     cv.pdf                generated from cv.html — what the CV button serves
@@ -40,8 +40,27 @@ attention (start date, and whether to state your work authorisation).
   load, so nothing goes stale.
 - **Add a role:** copy an `.entry` block. Newest first.
 
-Colours are the custom properties at the top of `style.css`, with a dark set in the
-`prefers-color-scheme` block below them.
+Colours are the custom properties at the top of `style.css`, with a dark set below them.
+
+## Light and dark
+
+The button beside the language switch cycles **System → Light → Dark**. System follows
+the OS, live; an explicit pick is stored in `localStorage` under `theme`.
+
+`<html>` carries two attributes: `data-theme-choice` (what the visitor picked) and
+`data-theme` (what that resolves to now, `light` or `dark`). A small script in `<head>`
+sets both before the first paint, so there is no flash of the wrong theme.
+
+The dark palette is written twice on purpose — under `prefers-color-scheme: dark` (also
+what visitors without JavaScript get; the toggle ships `hidden`) and under
+`[data-theme="dark"]` for an explicit pick. **Keep the two in sync.**
+
+**When you edit `style.css`, bump the `?v=` on its `<link>` in `index.html`.** GitHub
+Pages serves both under fixed URLs with `max-age=600`, so a returning visitor can
+otherwise get new HTML with a stale stylesheet.
+
+`cv.html` has no toggle: it follows the OS, and its dark palette is scoped to
+`@media screen`, so `cv.pdf` is unaffected.
 
 ## Regenerating the CV PDF
 

@@ -53,6 +53,9 @@ under `prefers-reduced-motion`, so the site renders fully without JavaScript.
 ### Colour
 
 The four layer colours are custom properties (`--interface`, `--perception`, `--services`,
-`--infra`) with a dark-scheme override in the `prefers-color-scheme` block. JS references them
-only as `var(--<layer>)`, keyed off the same layer names — renaming a layer means changing the
-token, the `data-layer`, and every `data-layers` value together.
+`--infra`). The dark palette exists twice — in the `prefers-color-scheme` block and in
+`:root[data-theme="dark"]` (the toggle) — and both must change together. JS references the
+layer colours only as `var(--<layer>)`, keyed off the same layer names — renaming a layer means
+changing the token, the `data-layer`, and every `data-layers` value together.
+
+After any `style.css` edit, bump `style.css?v=` in `index.html` (Pages caches both for 10 minutes).

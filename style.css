@@ -21,6 +21,8 @@
 }
 
 :root {
+  color-scheme: light;
+
   --paper:  #efefec;
   --panel:  #ffffff;
   --ink:    #000000;
@@ -39,8 +41,13 @@
   --bleed: clamp(1.1rem, 4vw, 2.5rem);
 }
 
+/* The dark palette, written twice on purpose: once for the OS preference
+   (which also covers visitors without JavaScript, where the toggle is
+   hidden) and once for an explicit pick of dark. Keep the two in sync. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
     --paper:  #121316;
     --panel:  #1b1d21;
     --ink:    #f7f7f5;
@@ -53,6 +60,22 @@
     --services:   #6cb84a;
     --infra:      #ff7a3d;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper:  #121316;
+  --panel:  #1b1d21;
+  --ink:    #f7f7f5;
+  --ink-2:  #a7abb2;
+  --rule:   #32353a;
+  --field:  #000000;
+
+  --interface:  #4ea8e8;
+  --perception: #a78bde;
+  --services:   #6cb84a;
+  --infra:      #ff7a3d;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -155,6 +178,35 @@ a { color: inherit; }
   margin-right: .5rem;
   background: var(--services);
   vertical-align: baseline;
+}
+
+.tools { display: flex; align-items: center; gap: .6rem; }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font: inherit;
+  font-size: .8125rem;
+  font-variation-settings: "wdth" 88;
+  font-weight: 600;
+  padding: .35rem .8rem;
+  background: none;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
+/* The markup ships it hidden and the script unhides it. */
+.theme-toggle[hidden] { display: none; }
+.theme-icon { display: inline-flex; }
+
+.vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .lang { display: flex; }
@@ -452,6 +504,8 @@ footer p + p { margin-top: .25rem; }
   .band { grid-template-columns: 1fr; }
   .band > div { border-left: 0; }
   .band > div + div { border-top: 1px solid rgba(255, 255, 255, .17); }
+  /* icon only; the word stays for screen readers */
+  .theme-name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
